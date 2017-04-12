@@ -3,6 +3,8 @@
 
   "dbUrl" : "mongodb://localhost/express_ai",
 
+  "clientUrl": "http://localhost:3000",
+
   "facebook": {
     "APP_ID": "1296426047067053",
     "APP_SECRET": "896cd915f95378ccfa77f8d58dde17a5",

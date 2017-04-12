@@ -3,6 +3,8 @@
 
   "dbUrl" : "mongodb://heroku_6g1wvvgk:komaaik5kqhaav5kojeugnq0t3@ds159330.mlab.com:59330/heroku_6g1wvvgk",
 
+  "clientUrl": "https://react-ai.herokuapp.com",
+
   "facebook": {
     "APP_ID": "212924785417190",
     "APP_SECRET": "4b4ca4e47912416d3cc74479d7112c04",

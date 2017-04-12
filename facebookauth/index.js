@@ -58,7 +58,7 @@ router.get('/callback',
     var payload = {id: req.user.id};
     var token = jwt.sign(payload, config.jwt.SECRET_OR_KEY, {expiresIn: config.jwt.options.maxAge});
     res.cookie('facebookToken', token, config.jwt.options);
-    res.redirect('http://localhost:3000/after-auth');
+    res.redirect(process.env.clientUrl + '/after-auth');
   }
 );
 router.get('/feed',
