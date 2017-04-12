@@ -46,5 +46,5 @@ function log(req, res, next) {
 }
 
 app.listen(process.env.PORT || config.port, ()=> {
-  console.log(`Server started at ${process.env.PORT}`);
+  console.log(`Server started at ${process.env.PORT || config.port}`);
 })

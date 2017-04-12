@@ -20,7 +20,10 @@
   "jwt": {
     "SECRET_OR_KEY": "DevilCircuit",
     "options" : {
-            "maxAge": 7200000
+            "maxAge": 7200000,
+            "domain": ".herokuapp.com",
+            "path": "/",
+            "secure": true
         }
   },
 
