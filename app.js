@@ -45,6 +45,6 @@ function log(req, res, next) {
   next();
 }
 
-app.listen(config.port, ()=> {
-  console.log(`Server started at ${config.port}`);
+app.listen(process.env.PORT || config.port, ()=> {
+  console.log(`Server started at ${process.env.PORT}`);
 })
