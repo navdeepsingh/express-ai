@@ -1,18 +1,18 @@
 {
   "port" : 8888,
 
-  "dbUrl" : "mongodb://localhost/express_react_ai",
+  "dbUrl" : "mongodb://heroku_jqvhkgzr:mdcp6i6m33v97c68dgu7bau08t@ds159330.mlab.com:59330/heroku_jqvhkgzr",
 
   "facebook": {
     "APP_ID": "212924785417190",
     "APP_SECRET": "4b4ca4e47912416d3cc74479d7112c04",
-    "CALLBACK_URL": "https://express-react-ai.herokuapp.com:8080/auth/facebook/callback"
+    "CALLBACK_URL": "https://express-ai.herokuapp.com:8080/auth/facebook/callback"
   },
 
   "twitter": {
     "CONSUMER_KEY": "ldpD1BvSW8NvJ9fSAcp3DZsX4",
     "CONSUMER_SECRET": "le0ZHwXEHggbJmjVpdgw6ttfT6wn07r5k5N2n1XoRle00khbWH",
-    "CALLBACK_URL": "https://express-react-ai.herokuapp.com:8080/auth/twitter/callback"
+    "CALLBACK_URL": "https://express-ai.herokuapp.com:8080/auth/twitter/callback"
   },
 
   "jwt": {
