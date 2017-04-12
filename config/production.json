@@ -1,7 +1,7 @@
 {
   "port" : 8080,
 
-  "dbUrl" : "mongodb://heroku_jqvhkgzr:mdcp6i6m33v97c68dgu7bau08t@ds159330.mlab.com:59330/heroku_jqvhkgzr",
+  "dbUrl" : "mongodb://heroku_6g1wvvgk:komaaik5kqhaav5kojeugnq0t3@ds159330.mlab.com:59330/heroku_6g1wvvgk",
 
   "facebook": {
     "APP_ID": "212924785417190",
