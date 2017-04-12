@@ -18,7 +18,15 @@ passport.deserializeUser(function(obj, cb) {
 });
 
 
-app.use(require('express-session')({ secret: 'navsara', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({
+  secret: 'navsara',
+  resave: true,
+  saveUninitialized: true,
+  cookie : {
+        secure : true,
+        maxAge: config.jwt.options.maxAge // 2 hours
+    }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
