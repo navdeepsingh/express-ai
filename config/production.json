@@ -1,5 +1,5 @@
 {
-  "port" : 8888,
+  "port" : 8080,
 
   "dbUrl" : "mongodb://heroku_jqvhkgzr:mdcp6i6m33v97c68dgu7bau08t@ds159330.mlab.com:59330/heroku_jqvhkgzr",
 
