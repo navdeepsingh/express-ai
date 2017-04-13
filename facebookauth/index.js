@@ -51,14 +51,14 @@ passport.use(new FacebookStrategy({
     return done(null, profile);
   }));
 
-router.get('/', passport.authenticate('facebook'));
+router.get('/', passport.authenticate('facebook', { scope: ['user_posts'] }));
 router.get('/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     var payload = {id: req.user.id};
     var token = jwt.sign(payload, config.jwt.SECRET_OR_KEY, {expiresIn: config.jwt.options.maxAge});
     res.cookie('facebookToken', token, config.jwt.options);
-    res.redirect(process.env.clientUrl + '/after-auth');
+    res.redirect(config.clientUrl + '/after-auth');
   }
 );
 router.get('/feed',
@@ -70,12 +70,15 @@ router.get('/feed',
       var promise = query.exec();
       promise
         .then(user => {
+
           facebook.api('/me/feed', {access_token : user.token}, function(err, result) {
             if (err) console.error(err);
+            console.log('User Token: ' + user.token);
 
             FacebookFeedsModel.remove({user_id : user._id},err => {
               if (err) console.error(err);
             })
+            console.log(result.data)
 
             // ES6 filter method used for filtering
             const filteredData = result.data.filter(post => post.message !== undefined)

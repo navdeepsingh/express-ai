@@ -76,7 +76,7 @@ exports.analyze = function (req, res) {
        let twitterFeeds =  yield promiseA;
        let facebookFeeds =  yield promiseB;
 
-      /* const socialFeeds = [twitterFeeds, facebookFeeds];
+      const socialFeeds = [twitterFeeds, facebookFeeds];
        socialFeeds.map(feeder => {
          for(const feed of feeder) {
            //console.log(feed.feed);
@@ -102,7 +102,7 @@ exports.analyze = function (req, res) {
                 }
            });
          }
-       });*/
+       });
        twitterFeeds = twitterFeeds.filter(tweet => tweet.analysis !== undefined)
                    .map((tweet, i) => {
                      tweet.analysis.feed = tweet.feed;
