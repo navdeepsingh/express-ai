@@ -7,6 +7,7 @@ const FacebookUserModel = FacebookUser.Model;
 
 module.exports = function() {
   return function(req, res, next) {
+    if ( req.path.includes('/results') ) return next();
     // Implement the middleware function
     console.log('<== Auth Middlware Fired ==>');
     if (req.query.token || req.query.token !== '|') {

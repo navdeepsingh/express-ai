@@ -121,5 +121,28 @@ exports.analyze = function (req, res) {
   else {
     res.send('You are not authrised to proceed.Thanks!');
   }
+}
 
+exports.results = function (req, res) {
+    let promiseA = TwitterFeedsModel.find({}).exec();
+    let promiseB = FacebookFeedsModel.find({}).exec();
+
+    // Genrator is being used
+    var execution = Promise.coroutine(function* (){
+       let twitterFeeds =  yield promiseA;
+       let facebookFeeds =  yield promiseB;
+       twitterFeeds = twitterFeeds.filter(tweet => tweet.analysis !== undefined)
+                   .map((tweet, i) => {
+                     tweet.analysis.feed = tweet.feed;
+                     tweet.analysis.index = i+1;
+                     return tweet.analysis;
+                   });
+       facebookFeeds = facebookFeeds.filter(post => post.analysis !== undefined)
+                     .map((post, i) => {
+                       post.analysis.feed = post.feed;
+                       post.analysis.index = i+1;
+                       return post.analysis;
+                     });
+       res.send({twitterFeeds, facebookFeeds});
+    })();
 }
