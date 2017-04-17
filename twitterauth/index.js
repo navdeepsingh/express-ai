@@ -64,8 +64,8 @@ router.get('/callback',
   function(req, res) {
     var payload = {id: req.user.id};
     var token = jwt.sign(payload, config.jwt.SECRET_OR_KEY, {expiresIn: config.jwt.options.maxAge});
-    res.cookie('twitterToken', token, config.jwt.options);
-    res.redirect(config.clientUrl + '/after-auth');
+    //res.cookie('twitterToken', token, config.jwt.options);
+    res.redirect(config.clientUrl + '/after-auth?token=' + token + '&handle=twitter');
   }
 );
 router.get('/statuses/home_timeline',
